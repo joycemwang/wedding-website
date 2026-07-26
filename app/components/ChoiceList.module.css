@@ -1,0 +1,63 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-foreground-muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.125rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+}
+
+.mark {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid var(--color-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.markGlyph {
+  font-size: 0.9375rem;
+  line-height: 1;
+  color: var(--wc-color, var(--color-accent));
+}
+
+.optionLabel,
+.optionLabelSelected {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.optionLabel {
+  color: var(--color-foreground-muted);
+}
+
+.optionLabelSelected {
+  color: var(--color-foreground);
+}

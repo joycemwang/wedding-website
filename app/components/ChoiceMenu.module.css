@@ -1,0 +1,94 @@
+.wrap {
+  position: relative;
+}
+
+.header,
+.headerOpen {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.875rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: 0.25rem 0.125rem 0.625rem;
+  text-align: left;
+  transition: border-color 0.3s ease;
+}
+
+.headerOpen {
+  border-color: var(--wc-color, var(--color-accent));
+}
+
+.valueLabel,
+.placeholderLabel {
+  font-family: var(--font-body);
+  font-size: 1.5625rem;
+  font-style: italic;
+}
+
+.valueLabel {
+  color: var(--color-foreground);
+}
+
+.placeholderLabel {
+  color: var(--color-foreground-muted);
+}
+
+.verb {
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-foreground-muted);
+  white-space: nowrap;
+}
+
+.options {
+  padding-top: 0.375rem;
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  gap: 0.875rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted var(--color-border);
+  border-radius: 0;
+  padding: 0.8125rem 0.125rem;
+  text-align: left;
+  font: inherit;
+}
+
+.mark {
+  font-size: 0.75rem;
+  width: 0.75rem;
+  flex: 0 0 auto;
+  color: var(--wc-color, var(--color-accent));
+}
+
+.optionLabel {
+  font-family: var(--font-body);
+  font-size: 1.3125rem;
+  color: var(--color-foreground);
+}
+
+.divider {
+  flex: 1;
+  border-bottom: 1px dotted var(--color-border);
+  position: relative;
+  top: -0.3125rem;
+}
+
+.note {
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-foreground-muted);
+  white-space: nowrap;
+}

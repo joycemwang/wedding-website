@@ -1,0 +1,154 @@
+/* Small (mobile, up to 767px): base styles — hero flows in normal
+   document order (image, then wordmark, then padding) instead of
+   overlaying a full-viewport section. See app/styles/breakpoints.ts. */
+.hero {
+  /* Nudges which part of the cover-sized bg image is visible. Positive
+     moves the image down (reveals more of its top); negative moves it
+     up (reveals more of its bottom). Overridden per breakpoint below. */
+  --hero-bg-offset-y: 0px;
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Clears the fixed header (4rem tall at this tier) plus a 1rem gap —
+     see .header in SiteHeader.module.css. Never remove without checking
+     that height stays in sync. */
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  background-image: linear-gradient(
+      color-mix(in srgb, var(--color-background) 45%, transparent),
+      color-mix(in srgb, var(--color-background) 45%, transparent)
+    ), var(--hero-bg-image);
+  background-size: cover, cover;
+  background-position: center, center calc(50% + var(--hero-bg-offset-y));
+  background-repeat: no-repeat, no-repeat;
+}
+
+.heroImage {
+  position: relative;
+  width: 80vw;
+  aspect-ratio: 31 / 40;
+  margin-top: 1rem;
+}
+
+/* Medium (tablet, 768px–1023px): image gets its own, smaller-than-mobile
+   but still generous width. Hero still flows (no 100vh overlay). */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    /* Header grows to 5.5rem at this tier — keep in sync. */
+    padding-top: 6.5rem;
+  }
+
+  .heroImage {
+    width: 40vw;
+  }
+}
+
+.heroWordmarkWrap {
+  position: relative;
+  width: 100%;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Large (desktop, 1024px and up): switch to the full-viewport overlay
+   treatment — image and wordmark absolutely positioned over the hero. */
+@media (min-width: 1024px) {
+  .hero {
+    --hero-bg-offset-y: -200px;
+
+    height: 100vh;
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .heroImage {
+    position: absolute;
+    left: 50%;
+    /* 8% of a short/short-ish viewport can dip under the fixed 5.5rem
+       header — max() guarantees clearance regardless of viewport height. */
+    top: max(8%, 7rem);
+    z-index: 10;
+    width: 44vw;
+    margin-top: 0;
+    transform: translateX(-50%);
+  }
+
+  .heroWordmarkWrap {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 4%;
+    margin-top: 0;
+  }
+}
+
+.heroWordmark {
+  font-family: var(--font-cormorant);
+  font-size: clamp(2.75rem, 8vw, 6rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-green-bold);
+  white-space: nowrap;
+  transform-origin: left top;
+  will-change: transform;
+  /* Soft halo in the page background color so the script text stays
+     legible over the busy floral background on mobile, regardless of
+     what part of the pattern happens to sit behind it. Cleared at the
+     991px+ tier below. */
+  text-shadow: 0 0 10px var(--color-background), 0 0 18px var(--color-background),
+    0 0 28px var(--color-background);
+}
+
+/* 991px and up: the text-shadow halo is a mobile/tablet-only aid for
+   reading over the busy floral background — dropped above 990px. Must
+   come AFTER the base .heroWordmark rule above: same specificity, so
+   source order decides, and a reset placed before its own base rule
+   gets overridden right back by it. */
+@media (min-width: 991px) {
+  .heroWordmark {
+    text-shadow: none;
+  }
+}
+
+.tagline {
+  position: absolute;
+  left: 2cqb;
+  top: 50%;
+  z-index: 30;
+  transform: translateY(-50%) rotate(180deg);
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: var(--color-green-bold);
+}
+
+.taglineFull {
+  display: none;
+}
+
+/* Medium and up (768px+): more breathing room for the rotated tagline,
+   and room enough to show the full date + venue instead of the short
+   numeric date used on mobile. */
+@media (min-width: 768px) {
+  .tagline {
+    left: 2.5rem;
+    font-size: 0.75rem;
+  }
+
+  .taglineShort {
+    display: none;
+  }
+
+  .taglineFull {
+    display: inline;
+  }
+}

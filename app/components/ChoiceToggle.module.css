@@ -1,0 +1,28 @@
+.wrap {
+  display: flex;
+  gap: 2.125rem;
+}
+
+.option,
+.optionSelected {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  padding: 0 0 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1.5625rem;
+  font-style: italic;
+  white-space: nowrap;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.option {
+  color: var(--color-foreground-muted);
+}
+
+.optionSelected {
+  color: var(--color-foreground);
+  border-bottom-color: var(--wc-color, var(--color-accent));
+}

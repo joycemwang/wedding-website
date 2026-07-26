@@ -1,0 +1,78 @@
+.section {
+  scroll-margin-top: 4rem;
+}
+
+/* Medium and up (768px+): matches the taller header at this tier
+   (see .header in SiteHeader.module.css) so anchor scrolls land clear. */
+@media (min-width: 768px) {
+  .section {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+.headerInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  font-family: var(--font-body);
+  color: var(--color-foreground);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-feature-settings: var(--font-heading-features);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+}
+
+.description {
+  margin: 0;
+  max-width: 28ch;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem 4rem;
+}
+
+/* Medium and up (768px+): matches the padding SectionEvents/etc. used
+   to define individually — centralized here so every section's content
+   area is consistent regardless of which component fills it. */
+@media (min-width: 768px) {
+  .content {
+    padding: 1rem 4vw 5rem;
+  }
+}
+
+/* Large (desktop, 1024px and up): switch to the sticky split-screen
+   treatment — matches the breakpoint the hero uses for its own overlay
+   treatment (see .hero in page.module.css). */
+@media (min-width: 1024px) {
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header {
+    position: sticky;
+    top: 5.5rem;
+    align-self: start;
+  }
+
+  .headerInner {
+    /* --header-min-height (see StickySplitSection.tsx) is only read
+       here, inside the desktop-only split-screen treatment — so a
+       per-section override never leaks into the mobile stacked
+       layout, where .headerInner has no min-height at all. */
+    min-height: var(--header-min-height, calc(100vh - 5.5rem));
+    padding: 3rem;
+  }
+}

@@ -1,0 +1,39 @@
+.list {
+  font-family: var(--font-body);
+  color: var(--color-peach-bold);
+}
+
+.item + .item {
+  margin-top: 3rem;
+}
+
+/* Large (desktop, 1024px and up): matches the same breathing-room fix
+   in SectionEvents.module.css — the content column starts right at the
+   top of its grid area on desktop, so add space before the first item
+   only. */
+@media (min-width: 1024px) {
+  .item:first-child {
+    margin-top: 4.25rem;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  margin: 0.75rem 0 0;
+  max-width: 46ch;
+}
+
+.location {
+  font-style: italic;
+  font-size: 0.9375rem;
+  margin-top: 0.5rem;
+}

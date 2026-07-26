@@ -1,0 +1,8 @@
+.carousel {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  transition: opacity 1.2s ease;
+}

@@ -1,0 +1,58 @@
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.125rem;
+}
+
+.label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--wc-color, var(--color-accent));
+  white-space: nowrap;
+}
+
+.fieldWrap {
+  flex: 1;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--wc-color);
+  background: transparent;
+  font-family: var(--font-body);
+  color: var(--wc-color, var(--color-accent));
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: var(--wc-color, var(--color-accent));
+}
+
+.text {
+  font-size: 1.625rem;
+  font-style: italic;
+  padding: 0.25rem 0.125rem 0.5625rem;
+  color: var(--wc-color, var(--color-accent));
+}
+
+.numeral {
+  width: 5.625rem;
+  font-size: 1.625rem;
+  text-align: center;
+  padding: 0.25rem 0.125rem 0.5625rem;
+}
+
+.errorInput,
+.errorInput:focus {
+  border-color: var(--color-accent-strong);
+}
+
+.errorMessage {
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--color-accent-strong);
+  margin-top: 0.5rem;
+}

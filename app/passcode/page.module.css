@@ -1,0 +1,47 @@
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--color-background);
+}
+
+.card {
+  width: 100%;
+  max-width: 26rem;
+  text-align: center;
+}
+
+.kicker {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-green-bold);
+}
+
+.heading {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--color-green-bold);
+  margin: 0.75rem 0 0;
+}
+
+.subheading {
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--color-green-bold);
+  margin: 0.75rem 0 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.form > :first-child {
+  width: 100%;
+}

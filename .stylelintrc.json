@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "media-feature-name-value-allowed-list": {
+      "min-width": ["768px", "1024px"],
+      "max-width": ["1023px"]
+    }
+  }
+}

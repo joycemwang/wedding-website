@@ -1,0 +1,63 @@
+.link {
+  display: inline-flex;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  font-family: var(--font-body);
+  color: var(--color-foreground);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Ornamented — flanking rule lines either side of an uppercase phrase. */
+.ornamented {
+  gap: 1.125rem;
+  font-size: 0.9375rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.ornamented:hover {
+  color: var(--wc-color, var(--color-accent));
+}
+
+.ornamented .rule {
+  width: 1.875rem;
+  height: 1px;
+  display: inline-block;
+  background: var(--wc-color, var(--color-accent));
+}
+
+/* Lettered — italic serif, inline, quiet. */
+.lettered {
+  font-style: italic;
+  font-size: 1.3125rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.1875rem;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.lettered:hover {
+  color: var(--wc-color, var(--color-accent));
+  border-color: var(--wc-color, var(--color-accent));
+}
+
+/* Quiet — small caps, no underline. */
+.quiet {
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-foreground-muted);
+  transition: color 0.3s ease;
+}
+
+.quiet:hover {
+  color: var(--wc-color, var(--color-accent));
+}
