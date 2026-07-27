@@ -30,7 +30,7 @@ const litchfieldImages = Array.from(
   }),
 );
 
-const BELDEN_IMAGE_COUNT = 20;
+const BELDEN_IMAGE_COUNT = 15;
 const beldenImages = Array.from({ length: BELDEN_IMAGE_COUNT }, (_, i) => ({
   src: withBasePath(`/images/belden-carousel/belden-${String(i + 1).padStart(2, "0")}.jpg`),
   alt: `Belden House & Mews — photo ${i + 1} of ${BELDEN_IMAGE_COUNT}`,
@@ -42,7 +42,7 @@ const abnerImages = Array.from({ length: ABNER_IMAGE_COUNT }, (_, i) => ({
   alt: `The Abner Hotel — photo ${i + 1} of ${ABNER_IMAGE_COUNT}`,
 }));
 
-const MAYFLOWER_IMAGE_COUNT = 20;
+const MAYFLOWER_IMAGE_COUNT = 12;
 const mayflowerImages = [
   {
     src: withBasePath("/images/mayflower-carousel/mayflower-00.jpg"),
