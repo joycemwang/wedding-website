@@ -13,8 +13,16 @@
   text-align: center;
 }
 
+.mark {
+  width: 18rem;
+  height: auto;
+  margin: 0 auto;
+  color: var(--color-green-bold);
+}
+
 .kicker {
   font-family: var(--font-heading);
+  font-feature-settings: var(--font-heading-features);
   font-size: 2rem;
   color: var(--color-green-bold);
 }

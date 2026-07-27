@@ -1,3 +1,4 @@
+import PasscodeMark from "../components/PasscodeMark";
 import PasscodeForm from "./PasscodeForm";
 import styles from "./page.module.css";
 
@@ -5,7 +6,7 @@ export default function PasscodePage() {
   return (
     <main className={styles.wrap}>
       <div className={styles.card}>
-        <div className={styles.kicker}>Joyce &amp; Ryan</div>
+        <PasscodeMark className={styles.mark} />
         <h1 className={styles.heading}>You&rsquo;re invited</h1>
         <p className={styles.subheading}>
           Enter the passcode from your save the date to view the details.
