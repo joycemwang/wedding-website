@@ -139,6 +139,15 @@ export default function SectionStay() {
         Transportation will run to and from events from these two locations only.
       </p>
 
+      <div className={styles.map}>
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1RPmuTJYDs5TTGNNyDGl2s37X-c8XM7E&ehbc=2E312F&noprof=1"
+          title="Map of hotel locations"
+          loading="lazy"
+          allowFullScreen
+        />
+      </div>
+
       {HOTELS.map((hotel, index) => (
         <div key={hotel.id} className={styles.hotel}>
           <div className={styles.titleRow}>
