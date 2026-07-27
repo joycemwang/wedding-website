@@ -12,6 +12,7 @@ type Hotel = {
   reservePhone?: string;
   reserveInstructions?: string;
   reserveBy?: string;
+  reserveDeadline?: boolean;
   notice?: string;
 };
 
@@ -77,6 +78,7 @@ const HOTELS: Hotel[] = [
     reservePhone: "(860) 567-4503",
     reserveInstructions: "and reference the Wang-Gao wedding block",
     reserveBy: "June 27, 2027",
+    reserveDeadline: true,
   },
   {
     id: "belden",
@@ -99,6 +101,7 @@ Transportation will also be provided to and from the Mayflower Inn and Spa on ou
     reservePhone: "(860) 337-2099",
     reserveInstructions: "and reference the Wang-Gao wedding block",
     reserveBy: "August 27, 2027",
+    reserveDeadline: false,
   },
   {
     id: "abner",
@@ -198,10 +201,12 @@ export default function SectionStay() {
               <div>
                 <div className={styles.reserveLabel}>Reserve by</div>
                 <div className={styles.reserveDate}>{hotel.reserveBy}</div>
-                <div className={styles.reserveNote}>
-                  Past this date we cannot guarantee the discounted rate or
-                  room availability.
-                </div>
+                {hotel.reserveDeadline && (
+                  <div className={styles.reserveNote}>
+                    Past this date we cannot guarantee the discounted rate or
+                    room availability.
+                  </div>
+                )}
               </div>
             </div>
           )}

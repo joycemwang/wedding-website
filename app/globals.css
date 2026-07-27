@@ -47,7 +47,7 @@
      are --font-pendulum / --font-cormorant — these semantic tokens are
      what every component should actually reference). Pendulum for
      headings, Cormorant Garamond for body text. */
-  --font-heading: var(--font-pendulum), cursive;
+  --font-heading: var(--font-pinyon), cursive;
   --font-body: var(--font-cormorant), ui-serif, Georgia, Cambria,
     "Times New Roman", Times, serif;
 
@@ -55,8 +55,11 @@
      not connective forms — turning them on swaps in oversized swashes
      for ordinary letters and makes multi-word headings collide into
      an illegible tangle. Apply alongside --font-heading wherever it's
-     used, to keep the plain connected letterforms instead. */
-  --font-heading-features: "liga" 0, "calt" 0;
+     used, to keep the plain connected letterforms instead.
+     --font-heading: var(--font-pendulum), cursive;
+     --font-heading-features: "liga" 0, "calt" 0;
+     */
+  
 }
 
 html {

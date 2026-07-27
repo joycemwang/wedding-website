@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond } from "next/font/google";
+import { Cormorant_Garamond, Pinyon_Script } from "next/font/google";
 import localFont from "next/font/local";
 import AccessGate from "./components/AccessGate";
 import SiteChrome from "./components/SiteChrome";
@@ -18,7 +18,13 @@ const pendulum = localFont({
 const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const pinyon = Pinyon_Script({
+  variable: "--font-pinyon",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pendulum.variable} ${cormorantGaramond.variable}`}
+      className={`${pendulum.variable} ${cormorantGaramond.variable} ${pinyon.variable}`}
     >
       <body>
         <AccessGate>

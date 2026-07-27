@@ -53,6 +53,7 @@
   letter-spacing: 0.15em;
   color: var(--color-green-bold);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .navLinks a span {
@@ -69,11 +70,19 @@
   height: 1px;
   background-color: var(--color-green-bold);
   opacity: 0;
-  transition: opacity 0.4s;
+  transition: opacity 0.4s, background-color 0.3s ease;
 }
 
 .navLinks a:hover span::after {
   opacity: 1;
+}
+
+.headerSolid .navLinks a {
+  color: var(--color-burgundy-bold);
+}
+
+.headerSolid .navLinks a span::after {
+  background-color: var(--color-burgundy-bold);
 }
 
 .wordmark {
@@ -86,7 +95,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--color-green-bold);
+  color: var(--color-burgundy-bold);
   white-space: nowrap;
   text-decoration: none;
   opacity: 0;
@@ -134,7 +143,14 @@
   width: 100%;
   height: 1px;
   background-color: var(--color-green-bold);
-  transition: top 0.3s ease, transform 0.3s ease;
+  transition: top 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* .toggle is a sibling of .header, not a descendant (see comment above
+   .toggle) — so matching the header's solid-background state needs the
+   adjacent-sibling combinator instead of a plain descendant selector. */
+.header.headerSolid + .toggle .toggleInner span {
+  background-color: var(--color-burgundy-bold);
 }
 
 .toggleInner span:last-child {
@@ -157,6 +173,13 @@
 .mobileNav {
   position: fixed;
   inset: 0;
+  /* iOS Safari sizes a fixed, inset:0 element against the layout
+     viewport, which can lag behind the address bar collapsing/
+     expanding — the panel visibly doesn't reach the real top/bottom
+     edge until the toolbar animation settles. dvh tracks the actual
+     visual viewport instead, so it fills the screen immediately. */
+  height: 100vh;
+  height: 100dvh;
   /* Higher than .header (50) so the header — including its solid
      background and box-shadow border — sits behind the menu when open. */
   z-index: 55;
@@ -197,6 +220,6 @@
   font-family: var(--font-body);
   font-size: 1.125rem;
   letter-spacing: 0.08em;
-  color: var(--color-green-bold);
+  color: var(--color-burgundy-bold);
   text-decoration: none;
 }

@@ -133,6 +133,7 @@
   text-transform: uppercase;
   letter-spacing: 0.35em;
   color: var(--color-green-bold);
+  font-weight: 700;
 }
 
 .taglineFull {
