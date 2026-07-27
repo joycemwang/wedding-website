@@ -1,0 +1,16 @@
+.duo {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .duo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}

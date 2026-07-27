@@ -1,6 +1,7 @@
 import DoubleHappinessMark from "./components/DoubleHappinessMark";
 import HeroCarousel from "./components/HeroCarousel";
 import HeroNames from "./components/HeroNames";
+import PhotoDuo from "./components/PhotoDuo";
 import StickySplitSection from "./components/StickySplitSection";
 import { withBasePath } from "./lib/basePath";
 import styles from "./page.module.css";
@@ -33,20 +34,22 @@ export default function Home() {
       </section>
 
       {SITE_SECTIONS.map((section, index) => (
-        <StickySplitSection
-          key={section.id}
-          id={section.id}
-          headerSide={index % 2 === 0 ? "left" : "right"}
-          title={section.title}
-          description={section.description}
-          backgroundColor={section.backgroundColor}
-          headerMinHeight={section.headerMinHeight}
-        >
-          {(() => {
-            const SectionContent = SITE_SECTION_CONTENT_MAP[section.id];
-            return SectionContent ? <SectionContent /> : null;
-          })()}
-        </StickySplitSection>
+        <div key={section.id}>
+          <StickySplitSection
+            id={section.id}
+            headerSide={index % 2 === 0 ? "left" : "right"}
+            title={section.title}
+            description={section.description}
+            backgroundColor={section.backgroundColor}
+            headerMinHeight={section.headerMinHeight}
+          >
+            {(() => {
+              const SectionContent = SITE_SECTION_CONTENT_MAP[section.id];
+              return SectionContent ? <SectionContent /> : null;
+            })()}
+          </StickySplitSection>
+          {section.id === "rsvp" && <PhotoDuo />}
+        </div>
       ))}
     </>
   );

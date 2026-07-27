@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AddToCalendarMenu from "./AddToCalendarMenu";
 import DesignLink from "./DesignLink";
+import FadeIn from "./FadeIn";
 import type { CalendarEventInfo } from "../lib/calendar";
 import { withBasePath } from "../lib/basePath";
 import styles from "./SectionEvents.module.css";
@@ -162,7 +163,7 @@ export default function SectionEvents() {
           <div className={styles.scheduleLabel}>Schedule</div>
 
           {day.events.map((ev) => (
-            <div key={ev.title} className={styles.eventRow}>
+            <FadeIn key={ev.title} className={styles.eventRow}>
               <div className={styles.eventTime}>
                 <div className={styles.eventTimeMain}>
                   {(() => {
@@ -190,7 +191,7 @@ export default function SectionEvents() {
                 <p className={styles.eventBlurb}>{ev.blurb}</p>
                 {ev.spot && <div className={styles.eventSpot}>{ev.spot}</div>}
               </div>
-            </div>
+            </FadeIn>
           ))}
 
           {day.venueImageSrc && (

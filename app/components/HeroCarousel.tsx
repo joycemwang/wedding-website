@@ -9,6 +9,8 @@ const SLIDES = [
   { src: withBasePath("/images/hero-v2.jpg"), alt: "Joyce and Ryan sitting on brownstone steps" },
   { src: withBasePath("/images/hero-v3.jpg"), alt: "Joyce and Ryan hugging on a tree-lined street" },
   { src: withBasePath("/images/hero-v4.jpg"), alt: "Joyce and Ryan holding hands crossing the street" },
+  { src: withBasePath("/images/hero-v5.jpg"), alt: "Joyce and Ryan embracing under trees on a Brooklyn sidewalk" },
+  { src: withBasePath("/images/hero-v6.jpg"), alt: "Joyce and Ryan holding hands and laughing in front of rose bushes" },
 ];
 
 const SLIDE_DURATION_MS = 5000;
