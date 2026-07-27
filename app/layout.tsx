@@ -44,8 +44,7 @@ export default function RootLayout({
     >
       <body>
         <AccessGate>
-          <SiteChrome />
-          {children}
+          <SiteChrome>{children}</SiteChrome>
         </AccessGate>
       </body>
     </html>
