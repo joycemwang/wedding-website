@@ -1,22 +1,43 @@
 .wrap {
-  min-height: 100vh;
+  /* Plain 100vh on iOS Safari matches the "large" viewport (toolbar
+     collapsed), which is taller than what's actually visible while
+     the address bar is showing on load — the box itself extends past
+     the fold, making the page scroll even though nothing inside it
+     overflows. dvh tracks the real, current visible viewport. */
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow-y: auto;
+  /* body is display:flex (the sticky-footer pattern used on the main
+     site) making .wrap a flex item — flex items default to a
+     content-based minimum size that can override an explicit height
+     even with overflow set. min-height: 0 removes that floor so
+     height/max-height above are actually respected instead of
+     stretching to fit .card's content. */
+  min-height: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 2rem;
+  padding: 0 2rem;
   background: var(--color-background);
+  position: relative;
 }
 
 .card {
   width: 100%;
-  max-width: 26rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mark {
-  width: 18rem;
+  width: 10rem;
   height: auto;
   margin: 0 auto;
+  margin-bottom: -2rem;
+  margin-top: 3rem;
   color: var(--color-green-bold);
 }
 
@@ -52,4 +73,13 @@
 
 .form > :first-child {
   width: 100%;
+}
+
+.landscape {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
 }

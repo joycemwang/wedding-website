@@ -1,6 +1,8 @@
 import PasscodeMark from "../components/PasscodeMark";
 import PasscodeForm from "./PasscodeForm";
 import styles from "./page.module.css";
+import Image from "next/image";
+import { withBasePath } from "../lib/basePath";
 
 export default function PasscodePage() {
   return (
@@ -13,6 +15,14 @@ export default function PasscodePage() {
         </p>
         <PasscodeForm />
       </div>
+      <Image
+        src={withBasePath("/images/footer-landscape.png")}
+        alt=""
+        aria-hidden="true"
+        width={2200}
+        height={601}
+        className={styles.landscape}
+      />
     </main>
   );
 }

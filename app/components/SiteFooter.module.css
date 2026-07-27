@@ -1,16 +1,36 @@
 .footer {
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
-  padding: 4rem 1.5rem 2rem;
-  background-color: var(--color-offwhite);
+  padding: 3rem 1.5rem;
+  height: 12rem;
+
+  @media (min-width: 768px) {
+    height: 36rem;
+    padding: 3rem 2rem;
+  }
 }
 
 .mark {
-  width: 10rem;
+  position: absolute;
+  top: 1rem;
+  z-index: 1;
+  width: 8rem;
   height: auto;
   color: var(--color-green-bold);
 
   @media (min-width: 768px) {
+    top: 8rem;
     width: 12rem;
   }
+}
+
+.landscape {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
 }
