@@ -162,7 +162,10 @@ export default function SectionStay() {
                 className={styles.name}
               >
                 {hotel.name}
-                <span className={styles.externalIcon}>&#8599;</span>
+                {/* U+FE0E forces text presentation — without it, mobile
+                    (iOS) renders the bare arrow as a colored emoji glyph
+                    instead of a plain text character. */}
+                <span className={styles.externalIcon}>&#8599;&#xFE0E;</span>
               </a>
             ) : (
               <div className={styles.name}>{hotel.name}</div>

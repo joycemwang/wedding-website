@@ -91,9 +91,13 @@
 .heroWordmark {
   font-family: var(--font-cormorant);
   font-size: clamp(2.75rem, 8vw, 6rem);
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  /* Matches .wordmark's letter-spacing in SiteHeader.module.css —
+     ScrollDock scales this element down to that one as you scroll, so
+     any mismatch in spacing (or weight) shows up as a visible jump at
+     the moment it docks and swaps over to the real header text. */
+  letter-spacing: 0.18em;
   color: var(--color-green-bold);
   white-space: nowrap;
   transform-origin: left top;
