@@ -82,4 +82,10 @@
   bottom: 0;
   width: 100%;
   height: auto;
+  max-height: 24rem;
+
+  /* stylelint-disable-next-line media-feature-name-value-allowed-list */
+  @media (max-width: 768px) {
+    min-height: 12rem;
+  }
 }
