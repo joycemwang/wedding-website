@@ -1,3 +1,4 @@
+import DoubleHappinessMark from "./components/DoubleHappinessMark";
 import HeroCarousel from "./components/HeroCarousel";
 import HeroNames from "./components/HeroNames";
 import StickySplitSection from "./components/StickySplitSection";
@@ -15,6 +16,8 @@ export default function Home() {
           ["--hero-bg-image" as string]: `url(${withBasePath("/images/hero-bg-peony.png")})`,
         } as React.CSSProperties}
       >
+        <DoubleHappinessMark className={styles.heroMark} />
+
         <div className={styles.heroImage}>
           <HeroCarousel />
         </div>

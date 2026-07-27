@@ -34,6 +34,32 @@
   margin-top: 1rem;
 }
 
+/* Anchored to .hero (position: relative at every tier) rather than to
+   .heroImage, so its vertical position tracks the fixed header's
+   height instead of wherever .heroImage happens to sit — it just
+   scrolls away with the rest of the hero section, same as everything
+   else here, since .hero itself isn't fixed/sticky. */
+.heroMark {
+  position: absolute;
+  left: 50%;
+  top: 1.5rem;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: auto;
+  color: var(--color-green-bold);
+  z-index: 20;
+}
+
+/* Matches .header growing to 5.5rem at this tier (see .header in
+   SiteHeader.module.css) — half that height keeps the mark vertically
+   centered in line with the nav bar. */
+@media (min-width: 768px) {
+  .heroMark {
+    top: 2rem;
+    width: 3.5rem;
+  }
+}
+
 /* Medium (tablet, 768px–1023px): image gets its own, smaller-than-mobile
    but still generous width. Hero still flows (no 100vh overlay). */
 @media (min-width: 768px) and (max-width: 1023px) {
