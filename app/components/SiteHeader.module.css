@@ -170,6 +170,10 @@
   transform: rotate(-45deg);
 }
 
+.toggleOpen span {
+  background-color: var(--color-burgundy-bold);
+}
+
 .mobileNav {
   position: fixed;
   inset: 0;
