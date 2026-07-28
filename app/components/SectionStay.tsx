@@ -64,7 +64,7 @@ const HOTELS: Hotel[] = [
     paragraph: (
       <>
         <p>
-          A discounted room block has been prepared at The Litchfield Inn
+          A room block has been prepared at The Litchfield Inn
           during our wedding weekend. Our welcome party will also be
           held here Friday evening.
         </p>
@@ -89,7 +89,7 @@ const HOTELS: Hotel[] = [
     paragraph: (
       <>
       <p>
-        We have reserved a second discounted room block at one of our favorite locations to stay when we're in Litchfield. We stayed here the weekend we got engaged and loved it! This quaint stay (with food to rave about!) is within walking distance to downtown Litchfield.
+        We have reserved a second room block at one of our favorite places to stay when we&apos;re in Litchfield. We stayed here the weekend we got engaged and loved it!
 </p>
 <div className={styles.engagementPhotos}>
   <div className={`${styles.engagementPhoto} ${styles.engagementPhotoWide}`}>
@@ -146,7 +146,7 @@ Transportation will also be provided to and from the Mayflower Inn and Spa on ou
           shuttle pick-up at the Belden House.
         </p>
         <p>
-          A discounted room block has not been secured here, but is another
+          A room block has not been secured here, but it is another
           notable stay in the area if you prefer!
         </p>
       </>
@@ -166,7 +166,7 @@ export default function SectionStay() {
   return (
     <div className={styles.stay}>
       <p className={styles.intro}>
-        Hotel options nearby are limited, so we&rsquo;ve reserved room blocks at{" "}
+        Hotel options nearby are very limited, so we&rsquo;ve reserved room blocks at{" "}
         <span className={styles.introAccent}>The Litchfield Inn</span> and{" "}
         <span className={styles.introAccent}>Belden House &amp; Mews</span>.<br/>
         Transportation will run to and from events from these two locations only.

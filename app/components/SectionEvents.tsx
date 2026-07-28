@@ -58,7 +58,7 @@ const DAYS: DayItem[] = [
         timeMain: "7:30 PM",
         timeSub: "until 10:30",
         blurb:
-          "Kick off the weekend with cocktails and some small bites. Come say hi, meet the other guests, and settle into the weekend.",
+          "Kick off the weekend with cocktails and small bites. Come by, meet the other guests, and settle into the weekend.",
       },
     ],
     calendarEvent: {
@@ -82,7 +82,7 @@ const DAYS: DayItem[] = [
     address: "Auberge Collection, 118 Woodbury Rd, Washington, CT",
     attire: "Black Tie",
     attireNote:
-      "Qipaos encouraged. Also, note the majority of the day will take place on grass or pebbled areas.",
+      "Qipaos encouraged. Please also note the majority of the day will take place on grass or pebbled areas.",
     events: [
       {
         title: "Ceremony",
