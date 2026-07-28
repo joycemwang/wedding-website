@@ -82,7 +82,7 @@ const DAYS: DayItem[] = [
     address: "Auberge Collection, 118 Woodbury Rd, Washington, CT",
     attire: "Black Tie",
     attireNote:
-      "Qipaos encouraged.",
+      "Qipaos encouraged. Also, note the majority of the day will take place on grass or pebbled areas.",
     events: [
       {
         title: "Ceremony",
@@ -98,7 +98,7 @@ const DAYS: DayItem[] = [
         spot: "The Tennis Court",
       },
       {
-        title: "After Party",
+        title: "Afterparty",
         timeMain: "10:30 PM",
         timeSub: "until 1:00 AM",
         blurb: "",

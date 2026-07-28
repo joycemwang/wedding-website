@@ -127,6 +127,45 @@
   font-size: 0.875rem;
 }
 
+/* Mobile: a rectangular collage — the first (wide) photo spans both
+   rows on the left, the other two stack on the right. Every cell
+   shares the same aspect-ratio (below); at exactly 2fr:1fr the left
+   column's row-spanning height would come out equal to the two
+   stacked cells' combined height. Deliberately under-sizing that to
+   1.7fr makes the left column a bit narrower (and so, at the same
+   aspect-ratio, a bit shorter) than the right column's stack —
+   a visible, intentional height mismatch rather than a flush edge. */
+.engagementPhotos {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.3rem;
+  margin: 1.25rem 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .engagementPhotos {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: none;
+  }
+}
+
+.engagementPhotoWide {
+  grid-row: span 2;
+}
+
+@media (min-width: 768px) {
+  .engagementPhotoWide {
+    grid-row: auto;
+  }
+}
+
+.engagementPhoto {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
 .paragraph {
   font-size: 0.9375rem;
   line-height: 1.7;

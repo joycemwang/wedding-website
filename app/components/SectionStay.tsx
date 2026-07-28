@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HotelCarousel from "./HotelCarousel";
 import type { ReactNode } from "react";
 import { withBasePath } from "../lib/basePath";
@@ -90,6 +91,35 @@ const HOTELS: Hotel[] = [
       <p>
         We have reserved a second discounted room block at one of our favorite locations to stay when we're in Litchfield. We stayed here the weekend we got engaged and loved it! This quaint stay (with food to rave about!) is within walking distance to downtown Litchfield.
 </p>
+<div className={styles.engagementPhotos}>
+  <div className={`${styles.engagementPhoto} ${styles.engagementPhotoWide}`}>
+    <Image
+      src={withBasePath("/images/belden-engagement-card.jpeg")}
+      alt="A congratulations note and flowers from Belden House waiting in their room"
+      fill
+      style={{ objectFit: "cover" }}
+      sizes="(min-width: 640px) 33vw, 33vw"
+    />
+  </div>
+  <div className={styles.engagementPhoto}>
+    <Image
+      src={withBasePath("/images/belden-engagement-selfie-ryan.jpeg")}
+      alt="Joyce and Ryan smiling together after getting engaged"
+      fill
+      style={{ objectFit: "cover" }}
+      sizes="(min-width: 640px) 33vw, 33vw"
+    />
+  </div>
+  <div className={styles.engagementPhoto}>
+    <Image
+      src={withBasePath("/images/belden-engagement-selfie-joyce.jpeg")}
+      alt="Joyce showing off her engagement ring, with Ryan smiling beside her"
+      fill
+      style={{ objectFit: "cover" }}
+      sizes="(min-width: 640px) 33vw, 33vw"
+    />
+  </div>
+</div>
 <p>
 Transportation will be provided to and from our welcome party at the Litchfield Inn on Friday.
 </p>

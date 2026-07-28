@@ -28,6 +28,14 @@ const pinyon = Pinyon_Script({
 });
 
 export const metadata: Metadata = {
+  // Without this, Next has no way to turn the auto-generated
+  // opengraph-image.jpg URL into an absolute one at export time and
+  // falls back to a localhost URL — unreachable by link-preview
+  // scrapers, so they grab some other image on the page instead (the
+  // footer landscape). Origin only, no /wedding-website suffix: Next
+  // already applies basePath itself when building the image's path,
+  // so adding it here too would double it up.
+  metadataBase: new URL("https://joycemwang.github.io"),
   title: "Joyce & Ryan",
   description: "Joyce & Ryan's wedding website",
 };
