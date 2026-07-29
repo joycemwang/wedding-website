@@ -49,14 +49,20 @@ export default function HotelCarousel({ images }: { images: CarouselImage[] }) {
         >
           {images.map((image, i) => (
             <div key={image.src} className={styles.slide}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                priority={i === 0}
-                style={{ objectFit: "cover" }}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
+              {/* Only mount the current slide and its immediate neighbors —
+                  with 15-20 photos per hotel and 4 hotels on the page, mounting
+                  every slide up front floods the browser's connection pool and
+                  starves the images the user is about to actually scroll to. */}
+              {(i === index || i === index - 1 || i === index + 1) && (
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  priority={i === 0}
+                  style={{ objectFit: "cover" }}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              )}
             </div>
           ))}
         </div>

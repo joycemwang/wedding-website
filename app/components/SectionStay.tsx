@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HotelCarousel from "./HotelCarousel";
+import HotelPrefetch from "./HotelPrefetch";
 import type { ReactNode } from "react";
 import { withBasePath } from "../lib/basePath";
 import styles from "./SectionStay.module.css";
@@ -9,6 +10,9 @@ type Hotel = {
   name: string;
   url?: string;
   images?: { src: string; alt: string }[];
+  // Heavy images beyond the carousel (e.g. Belden's engagement photos) that
+  // should be warmed in the background before the user scrolls to them.
+  prefetchImages?: string[];
   paragraph: ReactNode;
   reservePhone?: string;
   reserveInstructions?: string;
@@ -36,6 +40,10 @@ const beldenImages = Array.from({ length: BELDEN_IMAGE_COUNT }, (_, i) => ({
   src: withBasePath(`/images/belden-carousel/belden-${String(i + 1).padStart(2, "0")}.jpg`),
   alt: `Belden House & Mews — photo ${i + 1} of ${BELDEN_IMAGE_COUNT}`,
 }));
+
+const BELDEN_ENGAGEMENT_CARD_SRC = withBasePath("/images/belden-engagement-card.jpeg");
+const BELDEN_ENGAGEMENT_SELFIE_RYAN_SRC = withBasePath("/images/belden-engagement-selfie-ryan.jpeg");
+const BELDEN_ENGAGEMENT_SELFIE_JOYCE_SRC = withBasePath("/images/belden-engagement-selfie-joyce.jpeg");
 
 const ABNER_IMAGE_COUNT = 11;
 const abnerImages = Array.from({ length: ABNER_IMAGE_COUNT }, (_, i) => ({
@@ -86,6 +94,11 @@ const HOTELS: Hotel[] = [
     name: "Belden House & Mews",
     url: "https://beldenhouse.com/",
     images: beldenImages,
+    prefetchImages: [
+      BELDEN_ENGAGEMENT_CARD_SRC,
+      BELDEN_ENGAGEMENT_SELFIE_RYAN_SRC,
+      BELDEN_ENGAGEMENT_SELFIE_JOYCE_SRC,
+    ],
     paragraph: (
       <>
       <p>
@@ -94,7 +107,7 @@ const HOTELS: Hotel[] = [
 <div className={styles.engagementPhotos}>
   <div className={`${styles.engagementPhoto} ${styles.engagementPhotoWide}`}>
     <Image
-      src={withBasePath("/images/belden-engagement-card.jpeg")}
+      src={BELDEN_ENGAGEMENT_CARD_SRC}
       alt="A congratulations note and flowers from Belden House waiting in their room"
       fill
       style={{ objectFit: "cover" }}
@@ -103,7 +116,7 @@ const HOTELS: Hotel[] = [
   </div>
   <div className={styles.engagementPhoto}>
     <Image
-      src={withBasePath("/images/belden-engagement-selfie-ryan.jpeg")}
+      src={BELDEN_ENGAGEMENT_SELFIE_RYAN_SRC}
       alt="Joyce and Ryan smiling together after getting engaged"
       fill
       style={{ objectFit: "cover" }}
@@ -112,7 +125,7 @@ const HOTELS: Hotel[] = [
   </div>
   <div className={styles.engagementPhoto}>
     <Image
-      src={withBasePath("/images/belden-engagement-selfie-joyce.jpeg")}
+      src={BELDEN_ENGAGEMENT_SELFIE_JOYCE_SRC}
       alt="Joyce showing off her engagement ring, with Ryan smiling beside her"
       fill
       style={{ objectFit: "cover" }}
@@ -183,6 +196,9 @@ export default function SectionStay() {
 
       {HOTELS.map((hotel, index) => (
         <div key={hotel.id} className={styles.hotel}>
+          {hotel.prefetchImages && (
+            <HotelPrefetch srcs={hotel.prefetchImages} />
+          )}
           <div className={styles.titleRow}>
             <span className={styles.number}>
               {String(index + 1).padStart(2, "0")}

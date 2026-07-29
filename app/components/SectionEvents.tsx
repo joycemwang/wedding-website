@@ -91,6 +91,12 @@ const DAYS: DayItem[] = [
         spot: "The Heron Pond",
       },
       {
+        title: "Cocktail Hour",
+        timeMain: "4:30 PM",
+        blurb: "",
+        spot: "Chef's Garden",
+      },
+      {
         title: "Reception",
         timeMain: "5:30 PM",
         blurb:
@@ -102,7 +108,7 @@ const DAYS: DayItem[] = [
         timeMain: "10:30 PM",
         timeSub: "until 1:00 AM",
         blurb: "",
-        spot: "The Tea House",
+        spot: "The Teahouse",
       },
     ],
     calendarEvent: {
