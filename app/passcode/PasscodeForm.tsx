@@ -33,10 +33,11 @@ export default function PasscodeForm() {
       <TextField
         label="Passcode"
         name="passcode"
-        type="password"
+        type="text"
         autoComplete="off"
         error={error}
         color="var(--color-green-bold)"
+        style={{ fontStyle: "italic" }}
         required
       />
       <Button

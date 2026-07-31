@@ -56,11 +56,13 @@ export default function ScrollDock() {
         headerText.style.opacity = "1";
         headerText.style.pointerEvents = "auto";
         header.classList.add(styles.headerSolid);
+        document.documentElement.classList.add("docked");
       } else {
         heroText.style.visibility = "visible";
         headerText.style.opacity = "0";
         headerText.style.pointerEvents = "none";
         header.classList.remove(styles.headerSolid);
+        document.documentElement.classList.remove("docked");
       }
     };
 

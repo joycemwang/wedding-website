@@ -14,7 +14,7 @@ export const SITE_SECTIONS = [
   },
   {
     id: "rsvp",
-    title: "Rsvp",
+    title: "RSVP",
     href: "#rsvp",
     backgroundColor: "var(--color-burgundy)",
     headerMinHeight: "10rem",

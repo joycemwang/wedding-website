@@ -64,9 +64,41 @@
 
 html {
   height: 100%;
+  /* body has its own background, but the scrollbar gutter sits outside
+     body's box — without this, "transparent" there falls through to
+     Chrome's default canvas color, which follows OS dark mode (black)
+     instead of the page's cream background. */
+  background: var(--color-background);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: thin;
+  /* Matches the nav bar text: green-bold normally, burgundy-bold once
+     ScrollDock docks the header (see html.docked below). Track color
+     (second value) is transparent so only the thumb ever paints, floating
+     over the page rather than a solid colored gutter. */
+  scrollbar-color: var(--color-green-bold) transparent;
+}
+
+html.docked {
+  scrollbar-color: var(--color-burgundy-bold) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-green-bold);
+  border-radius: 999px;
+}
+
+html.docked::-webkit-scrollbar-thumb {
+  background-color: var(--color-burgundy-bold);
 }
 
 @media (prefers-reduced-motion: reduce) {

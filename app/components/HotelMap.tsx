@@ -160,7 +160,10 @@ function renderMap(container: HTMLDivElement, pins: MapPin[]) {
     google.maps.event.addListenerOnce(map, "bounds_changed", () => {
       if ((map.getZoom() ?? 0) > MAX_FIT_ZOOM) map.setZoom(MAX_FIT_ZOOM);
     });
-    map.fitBounds(bounds, 56);
+    // Less padding than the box's edges leaves the bounds fill more of the
+    // container, nudging fitBounds toward a tighter zoom than its default
+    // — gentler than forcing a whole zoom level tighter, which overcorrected.
+    map.fitBounds(bounds, 24);
   }
 }
 

@@ -21,6 +21,7 @@ type Hotel = {
   reserveInstructions?: string;
   reserveBy?: string;
   reserveDeadline?: boolean;
+  roomRate?: string;
   notice?: string;
 };
 
@@ -93,6 +94,7 @@ const HOTELS: Hotel[] = [
     reserveInstructions: "and reference the Wang-Gao wedding block",
     reserveBy: "June 27, 2027",
     reserveDeadline: true,
+    roomRate: "$389/night",
   },
   {
     id: "belden",
@@ -152,6 +154,7 @@ Transportation will also be provided to and from the Mayflower Inn and Spa on ou
     reserveInstructions: "and reference the Wang-Gao wedding block",
     reserveBy: "August 27, 2027",
     reserveDeadline: false,
+    roomRate: "$675/night",
   },
   {
     id: "abner",
@@ -245,6 +248,16 @@ export default function SectionStay() {
 
           {hotel.reservePhone && hotel.reserveBy && (
             <div className={styles.reserveGrid}>
+              {hotel.roomRate && (
+                <div>
+                  <div className={styles.reserveLabel}>Room rate</div>
+                  <div className={styles.reserveNote}>Starting at</div>
+                  <div className={styles.reserveDate}>
+                    {hotel.roomRate.replace("/night", "")}
+                    <span className={styles.rateSuffix}> /night</span>
+                  </div>
+                </div>
+              )}
               <div>
                 <div className={styles.reserveLabel}>How to reserve</div>
                 <div className={styles.reserveValue}>

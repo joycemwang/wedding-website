@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint && stylelint \"app/**/*.css\"",
-    "lint:css": "stylelint \"app/**/*.css\""
+    "lint:css": "stylelint \"app/**/*.css\"",
+    "build:cloudflare": "NEXT_PUBLIC_BUILD_TARGET=cloudflare next build",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy out --project-name=joyceandryan2027"
   },
   "dependencies": {
     "next": "16.2.11",
@@ -22,6 +24,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
     "stylelint": "^17.14.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.118.0"
   }
 }
