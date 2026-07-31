@@ -1,0 +1,61 @@
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+/* AdvancedMarkerElement anchors content at its bottom-center by default, so
+   the tail (.pin::before) below points at the actual pin coordinate. */
+.pin {
+  position: relative;
+  /* Contains the tail's z-index: -1 to this element's own stacking context —
+     without this, .pin (relative but no explicit z-index) doesn't create
+     one, so the tail escapes to whatever ancestor context it lands in
+     instead of tucking behind .pin's own background, leaving it looking
+     like a separate disconnected shape. */
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem 0.4rem 0.6rem;
+  background: var(--color-offwhite);
+  border: 1.5px solid var(--color-peach-bold);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(51, 18, 31, 0.22);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.pin:hover {
+  transform: translateY(-2px);
+}
+
+.pin::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -7px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--color-offwhite);
+  border-right: 1.5px solid var(--color-peach-bold);
+  border-bottom: 1.5px solid var(--color-peach-bold);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.pinDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-peach-bold);
+  flex-shrink: 0;
+}
+
+.pinLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-red-bold);
+  line-height: 1;
+}

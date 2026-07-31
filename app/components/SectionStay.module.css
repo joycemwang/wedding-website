@@ -56,20 +56,6 @@
   }
 }
 
-/* My Maps embeds always render a ~70px title bar at the top with no
-   official option to remove it — crop it by growing the iframe past
-   the frame's bottom edge and shifting it up, so .map's overflow:
-   hidden clips the title bar instead of the map. The Google/Terms
-   attribution row stays put since it's pinned to the map viewport's
-   own bottom edge, not affected by this shift. */
-.map iframe {
-  width: 100%;
-  height: calc(100% + 70px);
-  position: relative;
-  top: -70px;
-  border: 0;
-}
-
 .hotel {
   margin-top: 2.75rem;
   padding-top: 2.75rem;

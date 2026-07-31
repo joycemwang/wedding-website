@@ -21,7 +21,7 @@ export default function FadeIn({
           observer.disconnect();
         }
       },
-      { threshold: 0.2, rootMargin: "0px 0px -25% 0px" },
+      { threshold: 0.2, rootMargin: "0px 0px -20% 0px" },
     );
 
     observer.observe(el);

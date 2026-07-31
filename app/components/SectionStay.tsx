@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HotelCarousel from "./HotelCarousel";
+import HotelMap from "./HotelMap";
 import HotelPrefetch from "./HotelPrefetch";
 import type { ReactNode } from "react";
 import { withBasePath } from "../lib/basePath";
@@ -9,6 +10,8 @@ type Hotel = {
   id: string;
   name: string;
   url?: string;
+  lat: number;
+  lng: number;
   images?: { src: string; alt: string }[];
   // Heavy images beyond the carousel (e.g. Belden's engagement photos) that
   // should be warmed in the background before the user scrolls to them.
@@ -68,6 +71,8 @@ const HOTELS: Hotel[] = [
     id: "litchfield",
     name: "The Litchfield Inn",
     url: "https://www.litchfieldinnct.com/",
+    lat: 41.7380703,
+    lng: -73.2179841,
     images: litchfieldImages,
     paragraph: (
       <>
@@ -93,6 +98,8 @@ const HOTELS: Hotel[] = [
     id: "belden",
     name: "Belden House & Mews",
     url: "https://beldenhouse.com/",
+    lat: 41.7482584,
+    lng: -73.1915581,
     images: beldenImages,
     prefetchImages: [
       BELDEN_ENGAGEMENT_CARD_SRC,
@@ -150,6 +157,8 @@ Transportation will also be provided to and from the Mayflower Inn and Spa on ou
     id: "abner",
     name: "The Abner Hotel",
     url: "https://www.theabnerhotel.com/",
+    lat: 41.7465467,
+    lng: -73.1897408,
     images: abnerImages,
     paragraph: (
       <>
@@ -169,6 +178,8 @@ Transportation will also be provided to and from the Mayflower Inn and Spa on ou
     id: "mayflower",
     name: "Mayflower Inn & Spa",
     url: "https://auberge.com/mayflower/",
+    lat: 41.6290062,
+    lng: -73.3066599,
     images: mayflowerImages,
     paragraph:
       "Where Saturday's events will be hosted!",
@@ -186,11 +197,14 @@ export default function SectionStay() {
       </p>
 
       <div className={styles.map}>
-        <iframe
-          src="https://www.google.com/maps/d/embed?mid=1RPmuTJYDs5TTGNNyDGl2s37X-c8XM7E&ehbc=2E312F&noprof=1"
-          title="Map of hotel locations"
-          loading="lazy"
-          allowFullScreen
+        <HotelMap
+          pins={HOTELS.map((hotel) => ({
+            id: hotel.id,
+            name: hotel.name,
+            lat: hotel.lat,
+            lng: hotel.lng,
+            includeInBounds: hotel.id !== "mayflower",
+          }))}
         />
       </div>
 
