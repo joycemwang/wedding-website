@@ -50,7 +50,7 @@ const DAYS: DayItem[] = [
     venueUrl: "https://www.litchfieldinnct.com/",
     directionsUrl: "https://maps.app.goo.gl/GfeRUy1PntDkHAfv5",
     address: "Bantam Road, Litchfield, CT",
-    attire: "Cocktail",
+    attire: "Summer Cocktail",
     attireNote: "",
     events: [
       {

@@ -85,6 +85,24 @@
   background-color: var(--color-burgundy-bold);
 }
 
+.rsvpButton {
+  display: inline-block;
+  margin-left: auto;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-offwhite);
+  background-color: var(--color-green-bold);
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.headerSolid .rsvpButton {
+  background-color: var(--color-burgundy-bold);
+}
+
 .wordmark {
   position: absolute;
   left: 50%;

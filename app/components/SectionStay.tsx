@@ -146,7 +146,7 @@ const HOTELS: Hotel[] = [
 Transportation will be provided to and from our welcome party at the Litchfield Inn on Friday.
 </p>
 <p>
-Transportation will also be provided to and from the Mayflower Inn and Spa on our wedding day, departing promptly by 3:15 pm. It will be available to return our guests safely to their hotel following the close of the reception and the close of our afterparty.
+Transportation will also be provided to and from the Mayflower Inn on our wedding day, departing promptly by 3:15 pm. It will be available to return our guests safely to their hotel following the close of the reception and the close of our afterparty.
         </p>
         </>
     ),
@@ -154,7 +154,7 @@ Transportation will also be provided to and from the Mayflower Inn and Spa on ou
     reserveInstructions: "and reference the Wang-Gao wedding block",
     reserveBy: "August 27, 2027",
     reserveDeadline: false,
-    roomRate: "$675/night",
+    roomRate: "$525/night",
   },
   {
     id: "abner",

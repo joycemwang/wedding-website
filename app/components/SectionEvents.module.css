@@ -30,16 +30,6 @@
   margin-top: 4.25rem;
 }
 
-/* Large (desktop, 1024px and up): the sticky split header already gives
-   mobile enough visual separation from the nav, but on desktop the
-   content column starts right at the top of its grid area with nothing
-   above it — add breathing room before the first day only. */
-@media (min-width: 1024px) {
-  .day:first-child {
-    margin-top: 4.25rem;
-  }
-}
-
 .dayHeader {
   display: flex;
   align-items: baseline;

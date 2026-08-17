@@ -1,0 +1,43 @@
+.registry {
+  color: var(--color-pink-bold);
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin: 1.75rem 0 2.5rem;
+}
+
+.registryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  padding: 0 2.5rem;
+  border: 1px solid var(--color-pink-bold);
+  background: var(--color-pink-bold);
+  color: var(--color-offwhite);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.registryButton:hover {
+  background: transparent;
+  color: var(--color-pink-bold);
+}
+
+.overTheMoonLogo,
+.zolaLogo {
+  width: auto;
+  fill: currentColor;
+}
+
+.overTheMoonLogo {
+  height: 0.9375rem;
+}
+
+.zolaLogo {
+  height: 1.3125rem;
+}

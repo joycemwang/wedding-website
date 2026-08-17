@@ -75,4 +75,15 @@
     min-height: var(--header-min-height, calc(100vh - 5.5rem));
     padding: 3rem;
   }
+
+  /* The sticky split header already gives mobile enough visual
+     separation from the nav, but on desktop the content column starts
+     right at the top of its grid area with nothing above it. Every
+     section's root element is .content's only child, so this one rule
+     gives every section the same breathing room before its first
+     visible content — individual sections don't need to (and shouldn't)
+     redeclare it. */
+  .content > :first-child {
+    margin-top: 4.25rem;
+  }
 }

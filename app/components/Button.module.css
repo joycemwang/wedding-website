@@ -1,4 +1,5 @@
 .button {
+  display: inline-block;
   cursor: pointer;
   border-radius: 0;
   font: inherit;
@@ -6,6 +7,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.36em;
   text-transform: uppercase;
+  text-decoration: none;
   padding: 1.0625rem 2.5rem 1.0625rem 2.75rem;
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease,
     filter 0.3s ease;

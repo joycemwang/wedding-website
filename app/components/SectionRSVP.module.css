@@ -1,6 +1,13 @@
 
 .rsvp {
   color: var(--color-burgundy-bold);
+}
+
+.intro {
   font-style: italic;
   font-size: 1.25rem;
+}
+
+.buttonWrap {
+  margin-top: 2rem;
 }

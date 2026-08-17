@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react";
+import Link from "next/link";
 import styles from "./Button.module.css";
 
 type ButtonProps = {
@@ -6,6 +7,7 @@ type ButtonProps = {
   variant?: "primary" | "secondary";
   color?: string;
   className?: string;
+  href?: string;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "color">;
 
 export default function Button({
@@ -13,6 +15,7 @@ export default function Button({
   variant = "secondary",
   color,
   className,
+  href,
   type = "button",
   ...rest
 }: ButtonProps) {
@@ -25,6 +28,14 @@ export default function Button({
     .join(" ");
 
   const style = color ? ({ "--wc-color": color } as CSSProperties) : undefined;
+
+  if (href) {
+    return (
+      <Link href={href} className={classes} style={style}>
+        {children}
+      </Link>
+    );
+  }
 
   return (
     <button type={type} className={classes} style={style} {...rest}>

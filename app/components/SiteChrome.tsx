@@ -9,7 +9,7 @@ import SiteHeader from "./SiteHeader";
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = normalizePathname(usePathname());
-  if (pathname === "/passcode") return <>{children}</>;
+  if (pathname === "/passcode" || pathname === "/rsvp") return <>{children}</>;
 
   return (
     <>

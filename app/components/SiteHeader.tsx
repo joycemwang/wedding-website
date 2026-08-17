@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { SITE_SECTIONS } from "../siteSections";
+import { isEnabled } from "../lib/featureFlags";
+import { NAV_SECTIONS } from "../siteSections";
 import styles from "./SiteHeader.module.css";
 
 export default function SiteHeader() {
@@ -12,7 +13,7 @@ export default function SiteHeader() {
       <header id="site-header" className={styles.header}>
         <nav className={styles.nav}>
           <ul className={styles.navLinks}>
-            {SITE_SECTIONS.map((section) => (
+            {NAV_SECTIONS.map((section) => (
               <li key={section.id}>
                 <a href={section.href}>
                   <span>{section.title}</span>
@@ -23,6 +24,11 @@ export default function SiteHeader() {
           <a id="header-wordmark" href="#hero" className={styles.wordmark}>
             Joyce &amp; Ryan
           </a>
+          {isEnabled("rsvp") && (
+            <a href="/rsvp" className={styles.rsvpButton}>
+              RSVP
+            </a>
+          )}
         </nav>
       </header>
 
@@ -43,7 +49,7 @@ export default function SiteHeader() {
         className={`${styles.mobileNav} ${isMenuOpen ? styles.mobileNavOpen : ""}`}
       >
         <ul className={styles.mobileNavLinks}>
-          {SITE_SECTIONS.map((section) => (
+          {NAV_SECTIONS.map((section) => (
             <li key={section.id}>
               <a href={section.href} onClick={() => setIsMenuOpen(false)}>
                 {section.title}

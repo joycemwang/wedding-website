@@ -11,16 +11,6 @@
   max-width: 34ch;
 }
 
-/* Large (desktop, 1024px and up): matches the same breathing-room fix
-   in SectionEvents/SectionTravel — the content column starts right at
-   the top of its grid area on desktop, so add space before the first
-   element (the intro paragraph) only. */
-@media (min-width: 1024px) {
-  .intro {
-    margin-top: 4.25rem;
-  }
-}
-
 .introAccent {
   color: var(--color-peach-bold);
 }
