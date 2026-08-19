@@ -58,7 +58,7 @@ const DAYS: DayItem[] = [
         timeMain: "7:30 PM",
         timeSub: "until 10:30",
         blurb:
-          "Kick off the weekend with cocktails and small bites. Come by, meet the other guests, and settle into the weekend.",
+          "Kick off the weekend with cocktails and small bites. Come by, meet other guests, and settle into the weekend.",
       },
     ],
     calendarEvent: {
