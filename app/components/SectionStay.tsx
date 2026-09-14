@@ -84,7 +84,7 @@ const HOTELS: Hotel[] = [
         <p>
           Transportation will be provided to our wedding venue on Saturday,
           departing promptly at 3:15 pm. It will be available to return
-          guests safely back to their rooms following the close of our
+          guests to their hotels following the close of our
           reception and afterparty.
         </p>
       </>
@@ -145,7 +145,7 @@ const HOTELS: Hotel[] = [
 Transportation will be provided to and from our welcome party at the Litchfield Inn on Friday.
 </p>
 <p>
-Transportation will also be provided to and from the Mayflower Inn on our wedding day, departing promptly by 3:15 pm. It will be available to return guests safely to their hotel following the close of the reception and afterparty.
+Transportation will also be provided to and from the Mayflower Inn on our wedding day, departing promptly by 3:15 pm. It will be available to return guests to their hotels following the close of the reception and afterparty.
         </p>
         </>
     ),
