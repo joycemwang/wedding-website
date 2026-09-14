@@ -1,6 +1,6 @@
 .list {
   font-family: var(--font-body);
-  color: var(--color-peach-bold);
+  color: var(--color-burgundy);
 }
 
 .item + .item {

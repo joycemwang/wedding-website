@@ -27,7 +27,7 @@ const ALL_SITE_SECTIONS: Array<{
     id: "rsvp",
     title: "RSVP",
     href: "#rsvp",
-    backgroundColor: "var(--color-burgundy)",
+    backgroundColor: "var(--color-peach)", // "var(--color-burgundy)",
     headerMinHeight: isEnabled("rsvp") ? '16rem' : "10rem",
     // Once RSVP is live it gets its own CTA button in the nav bar instead
     // of a plain link — the section still renders in the body either way.
@@ -38,7 +38,7 @@ const ALL_SITE_SECTIONS: Array<{
     title: "Travel",
     href: "#travel",
     description: "Getting to Litchfield County, CT",
-    backgroundColor: "var(--color-peach)",
+    backgroundColor: "var(--color-burgundy)", // "var(--color-peach)",
     headerMinHeight: "28rem",
   },
   {

@@ -13,8 +13,8 @@ const BUTTERFLIES = [
     src: withBasePath("/images/flying-butterfly-dark.png"),
     width: 46,
     height: 46,
-    minDelayMs: 40_000,
-    maxDelayMs: 90_000,
+    minDelayMs: 80_000,
+    maxDelayMs: 180_000,
     durationMs: 4_400,
     initialDelayMs: 600,
     // Left side, angling down toward the right — matches this one's
@@ -30,8 +30,8 @@ const BUTTERFLIES = [
     src: withBasePath("/images/flying-butterfly-green.png"),
     width: 46,
     height: 44,
-    minDelayMs: 50_000,
-    maxDelayMs: 110_000,
+    minDelayMs: 100_000,
+    maxDelayMs: 220_000,
     durationMs: 4_400,
     initialDelayMs: 3_200,
     // Right side, angling up toward the top left.
@@ -46,8 +46,8 @@ const BUTTERFLIES = [
     src: withBasePath("/images/flying-butterfly-teal.png"),
     width: 46,
     height: 42,
-    minDelayMs: 60_000,
-    maxDelayMs: 130_000,
+    minDelayMs: 120_000,
+    maxDelayMs: 260_000,
     durationMs: 4_400,
     initialDelayMs: 3_600,
     // Top right, angling down toward the bottom left.

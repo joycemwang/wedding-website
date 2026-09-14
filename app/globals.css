@@ -81,7 +81,7 @@ html {
 }
 
 html.docked {
-  scrollbar-color: var(--color-burgundy-bold) transparent;
+  scrollbar-color: var(--color-peach-bold) transparent;
 }
 
 ::-webkit-scrollbar {

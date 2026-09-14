@@ -8,7 +8,7 @@ export default function SectionRSVP() {
       <div className={styles.rsvp}>
         <p className={styles.intro}>Kindly let us know if you&rsquo;ll be joining us by July 15.</p>
         <div className={styles.buttonWrap}>
-          <Button href="/rsvp" variant="primary" color="var(--color-burgundy)">
+          <Button href="/rsvp" variant="primary" color="var(--color-peach-bold)">
             RSVP
           </Button>
         </div>

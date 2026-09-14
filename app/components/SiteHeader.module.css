@@ -78,11 +78,11 @@
 }
 
 .headerSolid .navLinks a {
-  color: var(--color-burgundy-bold);
+  color: var(--color-peach-bold);
 }
 
 .headerSolid .navLinks a span::after {
-  background-color: var(--color-burgundy-bold);
+  background-color: var(--color-peach-bold);
 }
 
 .rsvpButton {
@@ -100,7 +100,7 @@
 }
 
 .headerSolid .rsvpButton {
-  background-color: var(--color-burgundy-bold);
+  background-color: var(--color-peach-bold);
 }
 
 .wordmark {
@@ -113,7 +113,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--color-burgundy-bold);
+  color: var(--color-peach-bold);
   white-space: nowrap;
   text-decoration: none;
   opacity: 0;
@@ -168,7 +168,7 @@
    .toggle) — so matching the header's solid-background state needs the
    adjacent-sibling combinator instead of a plain descendant selector. */
 .header.headerSolid + .toggle .toggleInner span {
-  background-color: var(--color-burgundy-bold);
+  background-color: var(--color-peach-bold);
 }
 
 .toggleInner span:last-child {
@@ -189,7 +189,7 @@
 }
 
 .toggleOpen span {
-  background-color: var(--color-burgundy-bold);
+  background-color: var(--color-peach-bold);
 }
 
 .mobileNav {
@@ -242,6 +242,6 @@
   font-family: var(--font-body);
   font-size: 1.125rem;
   letter-spacing: 0.08em;
-  color: var(--color-burgundy-bold);
+  color: var(--color-peach-bold);
   text-decoration: none;
 }
