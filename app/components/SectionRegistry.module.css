@@ -1,5 +1,5 @@
 .registry {
-  color: var(--color-pink-bold);
+  color: var(--color-burgundy);
   font-style: italic;
   font-size: 1.25rem;
 }
@@ -17,15 +17,15 @@
   justify-content: center;
   height: 3.5rem;
   padding: 0 2.5rem;
-  border: 1px solid var(--color-pink-bold);
-  background: var(--color-pink-bold);
+  border: 1px solid var(--color-burgundy);
+  background: var(--color-burgundy);
   color: var(--color-offwhite);
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .registryButton:hover {
   background: transparent;
-  color: var(--color-pink-bold);
+  color: var(--color-burgundy);
 }
 
 .overTheMoonLogo,

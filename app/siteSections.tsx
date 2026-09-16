@@ -27,7 +27,7 @@ const ALL_SITE_SECTIONS: Array<{
     id: "rsvp",
     title: "RSVP",
     href: "#rsvp",
-    backgroundColor: "var(--color-peach)", // "var(--color-burgundy)",
+    backgroundColor: "var(--color-peach)",
     headerMinHeight: isEnabled("rsvp") ? '16rem' : "10rem",
     // Once RSVP is live it gets its own CTA button in the nav bar instead
     // of a plain link — the section still renders in the body either way.
@@ -38,28 +38,27 @@ const ALL_SITE_SECTIONS: Array<{
     title: "Travel",
     href: "#travel",
     description: "Getting to Litchfield County, CT",
-    backgroundColor: "var(--color-burgundy)", // "var(--color-peach)",
+    backgroundColor: "var(--color-burgundy)",
     headerMinHeight: "28rem",
   },
   {
     id: "stay",
     title: "Stay",
     href: "#stay",
-    backgroundColor: "var(--color-red-bold)"
+    backgroundColor: "var(--color-red)"
   },
   {
     id: "registry",
     title: "Registry",
     href: "#registry",
     backgroundColor: "var(--color-pink)",
-    flag: "registry",
     headerMinHeight: "24rem",
   },
 ];
 
-// Sections behind a flag that's off are dropped entirely — unlike RSVP,
-// there's no existing "live" content to fall back to for a brand-new
-// section like Registry, so there's nothing to swap to inline.
+// Sections behind a flag that's off are dropped entirely, unless the
+// section itself swaps its content inline (like RSVP and Registry do)
+// when the flag is off.
 export const SITE_SECTIONS = ALL_SITE_SECTIONS.filter(
   (section) => !section.flag || isEnabled(section.flag)
 );

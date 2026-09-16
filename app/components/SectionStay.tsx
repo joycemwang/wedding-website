@@ -30,7 +30,7 @@ function toTelHref(phone: string) {
   return digits.length === 10 ? `+1${digits}` : `+${digits}`;
 }
 
-const LITCHFIELD_IMAGE_COUNT = 20;
+const LITCHFIELD_IMAGE_COUNT = 12;
 const litchfieldImages = Array.from(
   { length: LITCHFIELD_IMAGE_COUNT },
   (_, i) => ({
@@ -39,7 +39,7 @@ const litchfieldImages = Array.from(
   }),
 );
 
-const BELDEN_IMAGE_COUNT = 15;
+const BELDEN_IMAGE_COUNT = 13;
 const beldenImages = Array.from({ length: BELDEN_IMAGE_COUNT }, (_, i) => ({
   src: withBasePath(`/images/belden-carousel/belden-${String(i + 1).padStart(2, "0")}.jpg`),
   alt: `Belden House & Mews — photo ${i + 1} of ${BELDEN_IMAGE_COUNT}`,
@@ -49,7 +49,7 @@ const BELDEN_ENGAGEMENT_CARD_SRC = withBasePath("/images/belden-engagement-card.
 const BELDEN_ENGAGEMENT_SELFIE_RYAN_SRC = withBasePath("/images/belden-engagement-selfie-ryan.jpeg");
 const BELDEN_ENGAGEMENT_SELFIE_JOYCE_SRC = withBasePath("/images/belden-engagement-selfie-joyce.jpeg");
 
-const ABNER_IMAGE_COUNT = 11;
+const ABNER_IMAGE_COUNT = 9;
 const abnerImages = Array.from({ length: ABNER_IMAGE_COUNT }, (_, i) => ({
   src: withBasePath(`/images/abner-carousel/abner-${String(i + 1).padStart(2, "0")}.jpg`),
   alt: `The Abner Hotel — photo ${i + 1} of ${ABNER_IMAGE_COUNT}`,
@@ -153,7 +153,7 @@ Transportation will also be provided to and from the Mayflower Inn on our weddin
     reserveInstructions: "and reference the Wang-Gao wedding block",
     reserveBy: "August 27, 2027",
     reserveDeadline: false,
-    roomRate: "$525/night",
+    roomRate: "$545/night",
   },
   {
     id: "abner",
