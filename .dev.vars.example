@@ -1,0 +1,8 @@
+# Copy this file to `.dev.vars` (gitignored) for local `wrangler pages dev` testing.
+# In production, set these as encrypted environment variables in the
+# Cloudflare Pages dashboard instead (project → Settings → Environment variables) —
+# never commit real values.
+
+GOOGLE_SERVICE_ACCOUNT_EMAIL=
+GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY=
+GOOGLE_SHEET_ID=
