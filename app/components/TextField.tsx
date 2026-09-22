@@ -6,6 +6,7 @@ type TextFieldProps = {
   variant?: "text" | "numeral";
   color?: string;
   error?: string;
+  note?: string;
   className?: string;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, "className" | "color" | "size">;
 
@@ -14,6 +15,7 @@ export default function TextField({
   variant = "text",
   color,
   error,
+  note,
   className,
   id,
   ...rest
@@ -28,6 +30,12 @@ export default function TextField({
     >
       <label htmlFor={inputId} className={styles.label}>
         {label}
+        {rest.required && (
+          <span className={styles.requiredMark} aria-hidden="true">
+            {" "}
+            *
+          </span>
+        )}
       </label>
       <div className={styles.fieldWrap}>
         <input
@@ -41,7 +49,11 @@ export default function TextField({
             .join(" ")}
           {...rest}
         />
-        {error && <div className={styles.errorMessage}>{error}</div>}
+        {error ? (
+          <div className={styles.errorMessage}>{error}</div>
+        ) : (
+          note && <div className={styles.note}>{note}</div>
+        )}
       </div>
     </div>
   );

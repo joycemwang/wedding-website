@@ -1,7 +1,20 @@
 .row {
   display: flex;
-  align-items: baseline;
-  gap: 1.125rem;
+  /* Mobile default: label stacked above its input, both full width —
+     side by side only once there's enough horizontal room (tablet+).
+     This lives here (not in a page's own CSS) so it can't be fought
+     over by two stylesheets styling the same element differently. */
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.375rem;
+}
+
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1.125rem;
+  }
 }
 
 .label {
@@ -12,8 +25,18 @@
   white-space: nowrap;
 }
 
+.requiredMark {
+  color: var(--color-accent-strong);
+}
+
 .fieldWrap {
   flex: 1;
+  /* Flex items default to a content-based min-width, which lets a long
+     unwrapped error message force this box (and the input inside it,
+     which is width: 100% of it) wider than the row actually has room
+     for. min-width: 0 lets it shrink to the row's real available space
+     so the error text wraps instead. */
+  min-width: 0;
 }
 
 .input {
@@ -51,7 +74,18 @@
 
 .errorMessage {
   font-style: italic;
-  font-size: 1.0625rem;
+  font-size: 0.8125rem;
   color: var(--color-accent-strong);
+  opacity: 0.7;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.note {
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--wc-color, var(--color-accent));
+  opacity: 0.7;
+  text-align: left;
   margin-top: 0.5rem;
 }

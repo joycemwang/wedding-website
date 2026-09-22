@@ -23,7 +23,8 @@ function logVisit(name: string) {
 
 export default function PasscodeForm() {
   const router = useRouter();
-  const [error, setError] = useState<string | undefined>();
+  const [nameError, setNameError] = useState<string | undefined>();
+  const [passcodeError, setPasscodeError] = useState<string | undefined>();
   const [pending, setPending] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -32,10 +33,16 @@ export default function PasscodeForm() {
     const passcode = String(formData.get("passcode") ?? "").trim();
     const name = String(formData.get("name") ?? "").trim();
 
-    if (passcode.toLowerCase() !== SITE_PASSCODE) {
-      setError("That passcode doesn't match — check your save the date and try again.");
-      return;
-    }
+    const nextNameError = name ? undefined : "Required";
+    const nextPasscodeError = !passcode
+      ? "Required"
+      : passcode.toLowerCase() !== SITE_PASSCODE
+        ? "Invalid passcode"
+        : undefined;
+
+    setNameError(nextNameError);
+    setPasscodeError(nextPasscodeError);
+    if (nextNameError || nextPasscodeError) return;
 
     setPending(true);
     logVisit(name);
@@ -44,25 +51,26 @@ export default function PasscodeForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <form onSubmit={handleSubmit} className={styles.form} noValidate>
       <TextField
         label="First & last name"
         name="name"
         type="text"
         autoComplete="name"
+        error={nameError}
+        note="No need to worry about capitalization"
         color="var(--color-green-bold)"
         className={styles.formRow}
         required
       />
-      <p className={styles.hint}>No need to worry about capitalization</p>
       <TextField
         label="Passcode"
         name="passcode"
         type="text"
         autoComplete="off"
-        error={error}
+        error={passcodeError}
         color="var(--color-green-bold)"
-        className={styles.formRow}
+        className={`${styles.formRow} ${styles.passcodeField}`}
         required
       />
       <Button
