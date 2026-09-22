@@ -121,6 +121,26 @@
   pointer-events: none;
 }
 
+.wordmarkShort {
+  display: inline;
+}
+
+.wordmarkFull {
+  display: none;
+}
+
+/* Medium and up (768px+): room for the full name without overlapping
+   the RSVP button, so swap back from the "J & R" mobile shorthand. */
+@media (min-width: 768px) {
+  .wordmarkShort {
+    display: none;
+  }
+
+  .wordmarkFull {
+    display: inline;
+  }
+}
+
 /* Deliberately NOT nested inside .header — header creates its own
    stacking context (position: fixed + z-index), so a descendant's
    z-index can never rank above a sibling of header (like .mobileNav).

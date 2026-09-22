@@ -46,7 +46,7 @@ export default function PasscodeForm() {
 
     setPending(true);
     logVisit(name);
-    grantAccess();
+    grantAccess(name);
     router.replace("/");
   }
 
