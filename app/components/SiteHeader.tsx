@@ -22,8 +22,7 @@ export default function SiteHeader() {
             ))}
           </ul>
           <a id="header-wordmark" href="#hero" className={styles.wordmark}>
-            <span className={styles.wordmarkFull}>Joyce &amp; Ryan</span>
-            <span className={styles.wordmarkShort}>J &amp; R</span>
+            Joyce &amp; Ryan
           </a>
           {isEnabled("rsvp") && (
             <a href="/rsvp" className={styles.rsvpButton}>
