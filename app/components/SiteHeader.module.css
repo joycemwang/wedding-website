@@ -89,14 +89,24 @@
   display: inline-block;
   margin-left: auto;
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 0.28em;
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--color-offwhite);
   background-color: var(--color-green-bold);
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 0.875rem;
   transition: background-color 0.3s ease;
+}
+
+/* Medium and up (768px+): more room, so the RSVP button can go back
+   to its full size. */
+@media (min-width: 768px) {
+  .rsvpButton {
+    font-size: 0.75rem;
+    letter-spacing: 0.28em;
+    padding: 0.75rem 1.5rem;
+  }
 }
 
 .headerSolid .rsvpButton {

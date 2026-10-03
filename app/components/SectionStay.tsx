@@ -4,14 +4,15 @@ import HotelMap from "./HotelMap";
 import HotelPrefetch from "./HotelPrefetch";
 import type { ReactNode } from "react";
 import { withBasePath } from "../lib/basePath";
+import TextLink from "./TextLink";
 import styles from "./SectionStay.module.css";
 
 type Hotel = {
   id: string;
   name: string;
   url?: string;
-  lat: number;
-  lng: number;
+  lat?: number;
+  lng?: number;
   images?: { src: string; alt: string }[];
   // Heavy images beyond the carousel (e.g. Belden's engagement photos) that
   // should be warmed in the background before the user scrolls to them.
@@ -186,21 +187,71 @@ Transportation will also be provided to and from the Mayflower Inn on our weddin
     paragraph:
       "Where Saturday's events will be hosted!",
   },
+  {
+    id: "airbnb",
+    name: "Airbnb",
+    url: "",
+    paragraph: (
+      <>
+      <p>
+        There are a few Airbnb and Vrbo options in the area. If you&rsquo;re hoping to take advantage of the shuttles, please be sure to stay within
+        walking distance of the Belden House, Litchfield Inn, or the Mayflower Inn.
+      </p>
+      <p>
+        We&rsquo;ve already reserved two options for guests:
+      </p>
+      <ul className={styles.airbnbList}>
+        <li>
+          <TextLink
+            href="https://www.airbnb.com/rooms/1171140196668882069"
+            external
+            variant="quiet"
+            color="var(--color-red-bold)"
+          >
+            The 1782 Darling Home on the Litchfield Green
+          </TextLink>
+        </li>
+        <li>
+          <TextLink
+            href="https://www.airbnb.com/rooms/19112981"
+            external
+            variant="quiet"
+            color="var(--color-red-bold)"
+          >
+            Sunny Colonial in Washington Green (Mayflower Inn)
+          </TextLink>
+        </li>
+      </ul>
+      <p>
+        If interested in either, please reach out to us!
+      </p>
+      </>
+    )
+
+  }
 ];
 
 export default function SectionStay() {
   return (
     <div className={styles.stay}>
       <p className={styles.intro}>
-        Hotel options nearby are very limited, so we&rsquo;ve reserved room blocks at{" "}
+        We&rsquo;ve reserved room blocks at{" "}
         <span className={styles.introAccent}>The Litchfield Inn</span> and{" "}
         <span className={styles.introAccent}>Belden House &amp; Mews</span>.<br/>
-        Transportation will run to and from events from these two locations only.
+        Transportation will run to and from events from these two locations.
       </p>
+      <div className={styles.introSmall}>
+        <p>
+        There are no Ubers/Lyfts, so please plan to be within walking distance of the shuttle pick-up locations.
+        </p>
+        <p>
+        If you know you can attend, we highly recommend booking soon as there are very few accommodation options available.
+        </p>
+      </div>
 
       <div className={styles.map}>
         <HotelMap
-          pins={HOTELS.map((hotel) => ({
+          pins={(HOTELS.filter(h => h.lat && h.lng) as { lat: number; lng: number; id: string; name: string }[]).map((hotel) => ({
             id: hotel.id,
             name: hotel.name,
             lat: hotel.lat,
@@ -237,10 +288,8 @@ export default function SectionStay() {
             )}
           </div>
 
-          {hotel.images && hotel.images.length > 0 ? (
+          {hotel.images && hotel.images.length > 0 && (
             <HotelCarousel images={hotel.images} />
-          ) : (
-            <div className={styles.photoFrame}>{hotel.name}</div>
           )}
 
           <div className={styles.paragraph}>{hotel.paragraph}</div>

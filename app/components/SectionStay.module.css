@@ -10,6 +10,14 @@
   margin: 0;
   max-width: 34ch;
 }
+.introSmall {
+  font-style: italic;
+  padding-top: 2rem;
+  font-size: 1rem;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--color-red-bold);
+}
 
 .introAccent {
   color: var(--color-burgundy);
@@ -155,6 +163,16 @@
 
 .paragraph p + p {
   margin-top: 1em;
+}
+
+.airbnbList {
+  list-style: disc;
+  margin: 1em 0;
+  padding-left: 1.25em;
+}
+
+.airbnbList li + li {
+  margin-top: 0.5em;
 }
 
 .reserveGrid {

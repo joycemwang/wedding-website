@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "routePath": "/api/log-visit",
+      "mountPath": "/api",
+      "method": "POST",
+      "module": [
+        "api/log-visit.ts:onRequestPost"
+      ]
+    }
+  ],
+  "baseURL": "/"
+}
