@@ -157,27 +157,6 @@ Transportation will also be provided to and from the Mayflower Inn on our weddin
     roomRate: "$545/night",
   },
   {
-    id: "abner",
-    name: "The Abner Hotel",
-    url: "https://www.theabnerhotel.com/",
-    lat: 41.7465467,
-    lng: -73.1897408,
-    images: abnerImages,
-    paragraph: (
-      <>
-        <p>
-          New boutique hotel located across the street from the Belden
-          House with a rooftop bar. Walking distance to downtown and the
-          shuttle pick-up at the Belden House.
-        </p>
-        <p>
-          A room block has not been secured here, but it is another
-          notable stay in the area if you prefer!
-        </p>
-      </>
-    ),
-  },
-  {
     id: "mayflower",
     name: "Mayflower Inn & Spa",
     url: "https://auberge.com/mayflower/",

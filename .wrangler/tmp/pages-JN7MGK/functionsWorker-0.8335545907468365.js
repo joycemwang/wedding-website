@@ -113,7 +113,7 @@ async function onRequestPost({ request, env }) {
 }
 __name(onRequestPost, "onRequestPost");
 
-// ../.wrangler/tmp/pages-4ehZlz/functionsRoutes-0.26418521543316076.mjs
+// ../.wrangler/tmp/pages-JN7MGK/functionsRoutes-0.2424702207662821.mjs
 var routes = [
   {
     routePath: "/api/log-visit",
